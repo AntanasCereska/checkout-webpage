@@ -21,6 +21,10 @@ const PhoneApp2SectionHeading = styled.h2`
 
 const PhoneApp2PhotoWrapper = styled.div`
   background: url(${background}); ;
+
+@media(min-width: 1440px) {background: none;
+
+}
 `;
 
 const PhoneApp2Photo = styled.img`
