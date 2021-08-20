@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import Checkpoint from "../../Components/Checkpoint";
 
+import { YogaAdvantagesData } from '../../data/YogaAdvantagesData'
+
 const PhoneApp1Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
   width: 343px;
+
 `;
 
 const PhoneApp1SectionHeading = styled.h2`
@@ -32,10 +35,18 @@ const PhoneApp1 = () => {
       <PhoneApp1SectionHeading>
         Is Positive Yoga right for me?
       </PhoneApp1SectionHeading>
+
       <CheckpointsWrapper>
-        <Checkpoint />
-        <Checkpoint />
+        {YogaAdvantagesData.map((item) => (
+          <Checkpoint
+            index={item.id}
+            advantage={item.advantage}
+          />
+        ))}
       </CheckpointsWrapper>
+
+
+
     </PhoneApp1Section>
   );
 };

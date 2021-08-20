@@ -17,7 +17,8 @@ const ProgramCardLogoWrapper = styled.div`
 
 const ProgramCardLogo = styled.img`
   height: 48px;
-  width: 48px;`;
+  width: 48px;
+`;
 
 const ProgramCardText = styled.div`
   display: flex;
@@ -31,12 +32,16 @@ const ProgramCardHeading = styled.h3`
 `;
 
 const ProgramCardParagraph = styled.p`
-  font-weight: normal;
   font-size: 12px;
   line-height: 18px;
+  color: #22222c;
+  opacity: 0.64;
 `;
 
-const ProgramCard = ({ heading, paragraph, image }) => {
+const ProgramCard = ({ index, heading, paragraph, image }) => {
+
+
+
   return (
     <ProgramCardSection>
       <ProgramCardLogoWrapper>

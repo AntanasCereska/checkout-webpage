@@ -8,6 +8,17 @@ const ButtonSection = styled.button`
   width: 343px;
   background-color: #ff9b4e;
   border-radius: 8px;
+  box-shadow: 0px 16px 32px rgba(255, 155, 78, 0.24);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  :hover {
+    background-color: #ff7a15;
+  }
+  :active {
+    box-shadow: 0px 4px 8px rgba(255, 155, 78, 0.72);
+    transform: translateY(2px);
+  }
 `;
 
 const ButtonText = styled.p`

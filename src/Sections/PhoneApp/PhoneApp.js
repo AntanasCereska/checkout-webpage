@@ -6,6 +6,7 @@ const PhoneAppSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  width: 343px;
   @media (min-width: 1440px) {
     flex-direction: row;
     gap: 32px;

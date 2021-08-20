@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import styled from "styled-components";
 import ProgramHeading from "./ProgramHeading";
 import Program1 from "./Program1";
@@ -21,7 +23,6 @@ const Program1Program2Wrapper = styled.div`
   @media (min-width: 1440px) {
     flex-direction: row;
     gap: 32px;
-
   }
 `;
 

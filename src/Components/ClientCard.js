@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import StarIcon from "../images/icons/star.png";
+import { useState } from "react";
 
 const ClientCardSection = styled.div`
   display: flex;
@@ -11,6 +11,11 @@ const ClientCardSection = styled.div`
   background: #ffffff;
   box-shadow: 0px 16px 32px rgba(57, 53, 60, 0.08);
   border-radius: 16px;
+  transition: 0.3s;
+  :hover {
+    box-shadow: 0px 8px 16px rgba(57, 53, 60, 0.16);
+    transform: translateY(2px);
+  }
 `;
 
 const ClientInfo = styled.div`
@@ -37,13 +42,12 @@ const ClientRating = styled.div`
   flex-direction: row;
 `;
 
-const StarsWrapper = styled.div`
+const StarWrapper = styled.div`
   width: 24px;
   height: 24px;
 `;
 
 const Star = styled.img`
-  background: url(${StarIcon}) no-repeat center;
   width: 100%;
   height: 100%;
 `;
@@ -75,9 +79,12 @@ const ClientCard = ({ name, age, location, rate, photo, comment, heading }) => {
         <ClientLocation>{location}</ClientLocation>
       </ClientInfo>
       <ClientRating>
-        <StarsWrapper>
-          <Star />
-        </StarsWrapper>
+        {/* show client's rating (stars)*/}
+        {[...Array(rate)].map((elementInArray, index) => (
+          <StarWrapper key={index}>
+            <Star src={require(`../images/icons/star.png`).default} />
+          </StarWrapper>
+        ))}
       </ClientRating>
       <ClientPhotoWrapper>
         <ClientPhoto src={require(`../images/clients/${photo}.png`).default} />

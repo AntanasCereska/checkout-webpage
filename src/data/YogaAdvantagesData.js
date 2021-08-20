@@ -22,4 +22,5 @@ export const YogaAdvantagesData = [
     {
         id: 6,
         advantage: "Extra attention to muscle, joint and back health",
-    },]
+    },
+];

@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import PlanCard from "../../Components/PlanCard";
+import { useState } from "react";
+import PlanCardOn from "../../Components/PlanCards/PlanCardOn";
+import PlanCardOff from "../../Components/PlanCards/PlanCardOff";
 import Button from "../../Components/Button";
 import BottomMessage from "./BottomMessage";
 
@@ -25,35 +27,65 @@ const PlanCards = styled.div`
 `;
 
 const Program1 = () => {
+  const [selectedPlan, setSelectedPlan] = useState(0);
+
+  const togglePlan = (i) => {
+    if (selectedPlan === i) {
+      return setSelectedPlan(i);
+    }
+    setSelectedPlan(i);
+  };
+
   return (
     <Program1Section>
       <Program1Heading>
-        Choose your plan and get{" "}
+        Choose your plan and get
         <span
           style={{
             color: "#FF9B4E",
           }}
         >
-          7 days free trial
+          {" "}
+          7 days free trial{" "}
         </span>
       </Program1Heading>
 
+      {/* this is not the best way to do a conditional rendering*/}
+      {/*  better way would be just to apply different styles by passing state to child component*/}
       <PlanCards>
-        {PlansData.map((item) => (
-          <PlanCard
-            key={item.id}
-            heading={item.heading}
-            discount={item.discount}
-            priceMonthly={item.priceMonthly}
-            oldFullPrice={item.oldFullPrice}
-            newFullPrice={item.newFullPrice}
-            billedTerm={item.billedTerm}
-          />
-        ))}
+        {PlansData.map((item, i) => {
+          if (selectedPlan === i) {
+            return (
+              <div onClick={() => togglePlan(i)}>
+                <PlanCardOn
+                  key={item.id}
+                  heading={item.heading}
+                  discount={item.discount}
+                  priceMonthly={item.priceMonthly}
+                  oldFullPrice={item.oldFullPrice}
+                  newFullPrice={item.newFullPrice}
+                  billedTerm={item.billedTerm}
+                />
+              </div>
+            );
+          } else {
+            return (
+              <div onClick={() => togglePlan(i)}>
+                <PlanCardOff
+                  key={item.id}
+                  heading={item.heading}
+                  discount={item.discount}
+                  priceMonthly={item.priceMonthly}
+                  oldFullPrice={item.oldFullPrice}
+                  newFullPrice={item.newFullPrice}
+                  billedTerm={item.billedTerm}
+                />
+              </div>
+            );
+          }
+        })}
       </PlanCards>
-
       <Button />
-
       <BottomMessage />
     </Program1Section>
   );

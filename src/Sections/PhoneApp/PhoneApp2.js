@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import PhoneAppImage from "../../images/others/phone_app.png";
+import background from "../../images/others/accent.png";
 
 const PhoneApp2Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 343px;
 `;
 
 const PhoneApp2SectionHeading = styled.h2`
@@ -21,12 +20,10 @@ const PhoneApp2SectionHeading = styled.h2`
 `;
 
 const PhoneApp2PhotoWrapper = styled.div`
-  width: 343px;
-  height: 366px;
+  background: url(${background}); ;
 `;
 
 const PhoneApp2Photo = styled.img`
-  background: url(${PhoneAppImage}) no-repeat center;
   width: 100%;
   height: 100%;
 `;
@@ -38,7 +35,9 @@ const PhoneApp2 = () => {
         Start your yoga journey now!
       </PhoneApp2SectionHeading>
       <PhoneApp2PhotoWrapper>
-        <PhoneApp2Photo />
+        <PhoneApp2Photo
+          src={require(`../../images/others/phone_app.png`).default}
+        />
       </PhoneApp2PhotoWrapper>
     </PhoneApp2Section>
   );

@@ -7,9 +7,8 @@ const HeadingLogoSection = styled.div`
   align-items: center;
   width: 100%;
   height: 56px;
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  //box shadopw does not work for some reason
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.04);
   @media (min-width: 1440px) {
     height: 72px;
   }
