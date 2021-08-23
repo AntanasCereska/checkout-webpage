@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProgramCard from "../../Components/ProgramCard";
 import { ProgramsData } from "../../data/ProgramsData";
+import { Heading3 } from "../../Components/Headings/Heading3";
 
 const Program2Section = styled.div`
   display: flex;
@@ -12,12 +13,6 @@ const Program2Section = styled.div`
   }
 `;
 
-const Program1Heading = styled.h3`
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 28px;
-`;
-
 const ProgramCards = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,7 +22,7 @@ const ProgramCards = styled.div`
 const Program2 = () => {
   return (
     <Program2Section>
-      <Program1Heading>What's in my program?</Program1Heading>
+      <Heading3>What's in my program?</Heading3>
 
       <ProgramCards>
         {ProgramsData.map((item) => (

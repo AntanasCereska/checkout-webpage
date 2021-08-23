@@ -33,7 +33,9 @@ const HeadingDiscount = () => {
   return (
     <HeadingDiscountSection>
       <PricetagWrapper>
-        <PricetagIcon src={require(`../../images/icons/pricetag.png`).default} />
+        <PricetagIcon
+          src={require(`../../images/icons/pricetag.png`).default}
+        />
       </PricetagWrapper>
       <DiscountText>50% discount only valid for 00:15:49</DiscountText>
     </HeadingDiscountSection>

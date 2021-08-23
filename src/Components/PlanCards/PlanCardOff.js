@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Heading2 } from "../../Components/Headings/Heading2";
+import { Heading5 } from "../../Components/Headings/Heading5";
 
 const PlanCardSection = styled.div`
   display: flex;
@@ -6,24 +8,26 @@ const PlanCardSection = styled.div`
   justify-content: space-between;
   border-radius: 16px;
   padding: 16px;
-  border: 2px solid rgba(0, 0, 0, 0.08);  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  width: 100%;
   cursor: pointer;
 `;
 
-const PlanCardTermWrapper = styled.div`
+const LeftSection = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const LeftDiscountWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
   gap: 8px;
   width: 100%;
+  margin-bottom: 4px;
 `;
 
-const PlanCardTerm = styled.div`
-  font-size: 16px;
-  font-weight: 600;
-`;
-
-const DisplayCardDiscountPercentagePersentageWrapper = styled.div`
+const LeftDiscount = styled.div`
   background-color: #ffe082;
   border-radius: 6px;
   font-weight: bold;
@@ -34,29 +38,19 @@ const DisplayCardDiscountPercentage = styled.div`
   margin: 3px 8px;
 `;
 
-const PlanCardPrice = styled.p`
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 44px;
-`;
-
-const PlanCardDiscountFlat = styled.p`
+const LeftDiscountFlat = styled.p`
   font-size: 14px;
 `;
 
-const PlanCardSectionLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const PlanCardSectionRight = styled.div`
+const RightSection = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 `;
 
-const PlanCardSectionRightCheckboxWrapper = styled.div`
+//Checkbox wrapper
+const CheckboxWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +58,8 @@ const PlanCardSectionRightCheckboxWrapper = styled.div`
   height: 24px;
 `;
 
-const PlanCardSectionRightCheckbox = styled.img`
+//checkbox image
+const Checkbox = styled.img`
   width: 24px;
   height: 24px;
 `;
@@ -80,25 +75,24 @@ const PlanCard = ({
 }) => {
   return (
     <PlanCardSection>
-      <PlanCardSectionLeft>
-        <PlanCardTermWrapper>
-          <PlanCardTerm>{heading}</PlanCardTerm>
-          <DisplayCardDiscountPercentagePersentageWrapper>
+      <LeftSection>
+        <LeftDiscountWrapper>
+          <Heading5>{heading}</Heading5>
+          <LeftDiscount>
             {discount ? (
               <DisplayCardDiscountPercentage>
                 {discount}
               </DisplayCardDiscountPercentage>
             ) : null}
-          </DisplayCardDiscountPercentagePersentageWrapper>
-        </PlanCardTermWrapper>
-        <PlanCardPrice>
+          </LeftDiscount>
+        </LeftDiscountWrapper>
+        <Heading2>
           ${priceMonthly}
           <span style={{ fontSize: "14px", fontWeight: "normal" }}>
-            {" "}
             / month
           </span>
-        </PlanCardPrice>
-        <PlanCardDiscountFlat>
+        </Heading2>
+        <LeftDiscountFlat>
           <span style={{ textDecoration: "line-through" }}>
             {oldFullPrice ? <>{oldFullPrice}&nbsp;</> : null}
           </span>
@@ -108,15 +102,13 @@ const PlanCard = ({
             </span>
           ) : null}
           {billedTerm ? <>{billedTerm}</> : null}
-        </PlanCardDiscountFlat>{" "}
-      </PlanCardSectionLeft>
-      <PlanCardSectionRight>
-        <PlanCardSectionRightCheckboxWrapper>
-          <PlanCardSectionRightCheckbox
-            src={require(`../../images/icons/check_off.png`).default}
-          />
-        </PlanCardSectionRightCheckboxWrapper>
-      </PlanCardSectionRight>
+        </LeftDiscountFlat>
+      </LeftSection>
+      <RightSection>
+        <CheckboxWrapper>
+          <Checkbox src={require(`../../images/icons/check_off.png`).default} />
+        </CheckboxWrapper>
+      </RightSection>
     </PlanCardSection>
   );
 };

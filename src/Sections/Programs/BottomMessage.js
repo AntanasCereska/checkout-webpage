@@ -6,15 +6,13 @@ const FreeTrialMessageSection = styled.p`
   gap: 16px;
 `;
 
-const Paragraph1 = styled.p`
+const Paragraph = styled.p`
+  font-style: normal;
+  font-weight: normal;
   font-size: 12px;
-  text-align: center;
   line-height: 18px;
-`;
-const Paragraph2 = styled.p`
-  font-size: 12px;
   text-align: center;
-  line-height: 18px;
+  color: #39353c;
 `;
 
 const CheckoutImageWrapper = styled.div`
@@ -37,16 +35,16 @@ const Hyperlink = styled.a`
 const BottomMessage = () => {
   return (
     <FreeTrialMessageSection>
-      <Paragraph1>
+      <Paragraph>
         Your free trial will automatically become a paid subscription on the 8th
         day after you begin your trial. To cancel your subscription, please
         contact us at least 24 hours before the end of the trial period.
-      </Paragraph1>
-      <Paragraph2>
+      </Paragraph>
+      <Paragraph>
         By choosing a payment method you agree to the
         <Hyperlink href="_"> T&Cs </Hyperlink>
         and <Hyperlink href="_">Privacy Policy</Hyperlink>
-      </Paragraph2>
+      </Paragraph>
       <CheckoutImageWrapper>
         <CheckoutImage
           src={require(`../../images/others/checkout.png`).default}

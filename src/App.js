@@ -18,7 +18,6 @@ const Content = styled.div`
   }
 `;
 
-
 //render all components here
 function App() {
   return (
@@ -66,4 +65,3 @@ export default App;
 
 //if you think this code is a mess... i had to write it... ¯\_(ツ)_/¯
 //have a good day
-

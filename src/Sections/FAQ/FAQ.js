@@ -1,23 +1,23 @@
-import { useState } from "react";
 import styled from "styled-components";
+import { useState } from "react";
 import { FAQData } from "../../data/FAQData";
+import { Heading3 } from "../../Components/Headings/Heading3";
+import { Heading5 } from "../../Components/Headings/Heading5";
+import { ParagraphSmall } from "../../Components/Paragraphs/ParagraphSmall";
 
 const FAQSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 343px;
+  @media (min-width: 1440px) {
+    width: 736px;
+  }
 `;
 
-const FAQSectionHeader = styled.h2`
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 28px;
-  color: #22222c;
-  text-align: center;
+const Heading3Center = styled(Heading3)`
   @media (min-width: 1440px) {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 32px;
+    text-align: center;
   }
 `;
 
@@ -32,11 +32,12 @@ const FAQQiestionSection = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
   border-radius: 16px;
-  width: 343px;
+  width: 100%;
   padding: 18px 16px;
   display: flex;
   flex-direction: column;
   gap: 18px;
+
   @media (min-width: 1440px) {
     width: 736px;
   }
@@ -52,13 +53,6 @@ const FAQQuestion = styled.div`
   letter-spacing: -0.4px;
   color: #212121;
   cursor: pointer;
-`;
-
-const FAQQuestionTitle = styled.div`
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.4px;
-  color: #212121;
 `;
 
 const FAQQuestionArrowWrapper = styled.div`
@@ -77,6 +71,7 @@ const FAQQuestionArrow = styled.img`
 const FAQ = () => {
   const [selectedQuestion, setSelectedQuestion] = useState(null);
 
+  //toggle question's answer
   const toggleQuesion = (i) => {
     if (selectedQuestion === i) {
       return setSelectedQuestion(null);
@@ -86,12 +81,12 @@ const FAQ = () => {
 
   return (
     <FAQSection>
-      <FAQSectionHeader>Frequently Asked Questions </FAQSectionHeader>
+      <Heading3Center>Frequently Asked Questions</Heading3Center>
       <FAQSectionWrapper>
         {FAQData.map((item, i) => (
           <FAQQiestionSection>
             <FAQQuestion onClick={() => toggleQuesion(i)}>
-              <FAQQuestionTitle>{item.question}</FAQQuestionTitle>
+              <Heading5>{item.question}</Heading5>
 
               <FAQQuestionArrowWrapper>
                 {selectedQuestion === i ? (
@@ -106,7 +101,9 @@ const FAQ = () => {
               </FAQQuestionArrowWrapper>
             </FAQQuestion>
 
-            {selectedQuestion === i ? <div>{item.answer}</div> : null}
+            {selectedQuestion === i ? (
+              <ParagraphSmall>{item.answer}</ParagraphSmall>
+            ) : null}
           </FAQQiestionSection>
         ))}
       </FAQSectionWrapper>

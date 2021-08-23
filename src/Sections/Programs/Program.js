@@ -1,9 +1,7 @@
-import { useState } from "react";
-
 import styled from "styled-components";
-import ProgramHeading from "./ProgramHeading";
 import Program1 from "./Program1";
 import Program2 from "./Program2";
+import ProgramHeadings from "./ProgramsHeadings";
 
 const ProgramSection = styled.div`
   display: flex;
@@ -11,7 +9,9 @@ const ProgramSection = styled.div`
   align-items: center;
   gap: 24px;
   overflow: hidden;
+  width: 343px;
   @media (min-width: 1440px) {
+    width: 729px;
     gap: 32px;
   }
 `;
@@ -29,7 +29,7 @@ const Program1Program2Wrapper = styled.div`
 const Program = () => {
   return (
     <ProgramSection>
-      <ProgramHeading />
+      <ProgramHeadings />
       <Program1Program2Wrapper>
         <Program1 />
         <Program2 />

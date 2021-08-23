@@ -1,26 +1,12 @@
 import styled from "styled-components";
 import Checkpoint from "../../Components/Checkpoint";
-
-import { YogaAdvantagesData } from '../../data/YogaAdvantagesData'
+import { Heading3 } from "../../Components/Headings/Heading3";
+import { YogaAdvantagesData } from "../../data/YogaAdvantagesData";
 
 const PhoneApp1Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 343px;
-
-`;
-
-const PhoneApp1SectionHeading = styled.h2`
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 28px;
-  color: #22222c;
-  @media (min-width: 1440px) {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 32px;
-  }
 `;
 
 const CheckpointsWrapper = styled.div`
@@ -32,21 +18,12 @@ const CheckpointsWrapper = styled.div`
 const PhoneApp1 = () => {
   return (
     <PhoneApp1Section>
-      <PhoneApp1SectionHeading>
-        Is Positive Yoga right for me?
-      </PhoneApp1SectionHeading>
-
+      <Heading3>Is Positive Yoga right for me?</Heading3>
       <CheckpointsWrapper>
         {YogaAdvantagesData.map((item) => (
-          <Checkpoint
-            index={item.id}
-            advantage={item.advantage}
-          />
+          <Checkpoint index={item.id} advantage={item.advantage} />
         ))}
       </CheckpointsWrapper>
-
-
-
     </PhoneApp1Section>
   );
 };

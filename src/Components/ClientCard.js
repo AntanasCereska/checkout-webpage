@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { Heading5 } from "../Components/Headings/Heading5";
+import { ParagraphRegular } from "./Paragraphs/ParagraphRegular";
 
 const ClientCardSection = styled.div`
   display: flex;
@@ -21,13 +22,6 @@ const ClientCardSection = styled.div`
 const ClientInfo = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const ClientName = styled.h3`
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: -0.4px;
 `;
 
 const ClientLocation = styled.h3`
@@ -62,20 +56,13 @@ const ClientPhoto = styled.img`
   height: 100%;
 `;
 
-const ClientComment = styled.p`
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
-  color: #22222c;
-`;
-
 const ClientCard = ({ name, age, location, rate, photo, comment, heading }) => {
   return (
     <ClientCardSection>
       <ClientInfo>
-        <ClientName>
+        <Heading5>
           {name}, {age}
-        </ClientName>
+        </Heading5>
         <ClientLocation>{location}</ClientLocation>
       </ClientInfo>
       <ClientRating>
@@ -89,7 +76,7 @@ const ClientCard = ({ name, age, location, rate, photo, comment, heading }) => {
       <ClientPhotoWrapper>
         <ClientPhoto src={require(`../images/clients/${photo}.png`).default} />
       </ClientPhotoWrapper>
-      <ClientComment>{comment}</ClientComment>
+      <ParagraphRegular>{comment}</ParagraphRegular>
     </ClientCardSection>
   );
 };

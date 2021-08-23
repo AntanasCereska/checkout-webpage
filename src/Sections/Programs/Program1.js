@@ -4,7 +4,7 @@ import PlanCardOn from "../../Components/PlanCards/PlanCardOn";
 import PlanCardOff from "../../Components/PlanCards/PlanCardOff";
 import Button from "../../Components/Button";
 import BottomMessage from "./BottomMessage";
-
+import { Heading3 } from "../../Components/Headings/Heading3";
 import { PlansData } from "../../data/PlansData";
 
 const Program1Section = styled.div`
@@ -12,12 +12,9 @@ const Program1Section = styled.div`
   flex-direction: column;
   gap: 16px;
   width: 343px;
-`;
-
-const Program1Heading = styled.h3`
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 28px;
+  @media (min-width: 1440px) {
+    width: 343px;
+  }
 `;
 
 const PlanCards = styled.div`
@@ -38,17 +35,10 @@ const Program1 = () => {
 
   return (
     <Program1Section>
-      <Program1Heading>
-        Choose your plan and get
-        <span
-          style={{
-            color: "#FF9B4E",
-          }}
-        >
-          {" "}
-          7 days free trial{" "}
-        </span>
-      </Program1Heading>
+      <Heading3>
+        Choose your plan and get{" "}
+        <span style={{ color: "#FF9B4E" }}>7 days free trial</span>
+      </Heading3>
 
       {/* this is not the best way to do a conditional rendering*/}
       {/*  better way would be just to apply different styles by passing state to child component*/}

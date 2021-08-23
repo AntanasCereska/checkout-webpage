@@ -1,30 +1,17 @@
 import styled from "styled-components";
-import background from "../../images/others/accent.png";
+import { Heading3 } from "../../Components/Headings/Heading3";
 
 const PhoneApp2Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
-`;
-
-const PhoneApp2SectionHeading = styled.h2`
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 28px;
-  color: #22222c;
-  @media (min-width: 1440px) {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 32px;
-  }
+  z-index: 2;
 `;
 
 const PhoneApp2PhotoWrapper = styled.div`
-  background: url(${background}); ;
-
-@media(min-width: 1440px) {background: none;
-
-}
+  @media (min-width: 1440px) {
+    background: none;
+  }
 `;
 
 const PhoneApp2Photo = styled.img`
@@ -35,9 +22,7 @@ const PhoneApp2Photo = styled.img`
 const PhoneApp2 = () => {
   return (
     <PhoneApp2Section>
-      <PhoneApp2SectionHeading>
-        Start your yoga journey now!
-      </PhoneApp2SectionHeading>
+      <Heading3>Start your yoga journey now!</Heading3>
       <PhoneApp2PhotoWrapper>
         <PhoneApp2Photo
           src={require(`../../images/others/phone_app.png`).default}

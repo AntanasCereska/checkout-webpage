@@ -1,27 +1,21 @@
 import styled from "styled-components";
 import ClientCard from "../../Components/ClientCard";
+import { Heading2 } from "../../Components/Headings/Heading2";
 import { ClientsData } from "../../data/ClientsData";
+
+const Heading2Center = styled(Heading2)`
+  @media (min-width: 1440px) {
+    text-align: center;
+  }
+`;
 
 const ClientsSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
   width: 343px;
-@media(min-width: 1440px){
-  width: auto;
-}
-`;
-
-const ClientsSectionHeader = styled.h2`
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 28px;
-  color: #22222c;
-  text-align: center;
   @media (min-width: 1440px) {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 32px;
+    width: auto;
   }
 `;
 
@@ -37,9 +31,7 @@ const ClientsCardsWrapper = styled.div`
 const Clients = () => {
   return (
     <ClientsSection>
-      <ClientsSectionHeader>
-        Hear success stories from our clients
-      </ClientsSectionHeader>
+      <Heading2Center>Hear success stories from our clients</Heading2Center>
       <ClientsCardsWrapper>
         {ClientsData.map((item) => (
           <ClientCard

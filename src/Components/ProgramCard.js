@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Heading5 } from "./Headings/Heading5";
 
 const ProgramCardSection = styled.div`
   display: flex;
@@ -25,12 +26,6 @@ const ProgramCardText = styled.div`
   flex-direction: column;
 `;
 
-const ProgramCardHeading = styled.h3`
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 20px;
-`;
-
 const ProgramCardParagraph = styled.p`
   font-size: 12px;
   line-height: 18px;
@@ -39,9 +34,6 @@ const ProgramCardParagraph = styled.p`
 `;
 
 const ProgramCard = ({ index, heading, paragraph, image }) => {
-
-
-
   return (
     <ProgramCardSection>
       <ProgramCardLogoWrapper>
@@ -50,7 +42,7 @@ const ProgramCard = ({ index, heading, paragraph, image }) => {
         />
       </ProgramCardLogoWrapper>
       <ProgramCardText>
-        <ProgramCardHeading>{heading}</ProgramCardHeading>
+        <Heading5>{heading}</Heading5>
         <ProgramCardParagraph>{paragraph}</ProgramCardParagraph>
       </ProgramCardText>
     </ProgramCardSection>
