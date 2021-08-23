@@ -11,7 +11,7 @@ const ProgramSection = styled.div`
   overflow: hidden;
   width: 343px;
   @media (min-width: 1440px) {
-    width: 729px;
+    width: 100%;
     gap: 32px;
   }
 `;

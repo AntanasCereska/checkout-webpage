@@ -13,7 +13,7 @@ const Program1Section = styled.div`
   gap: 16px;
   width: 343px;
   @media (min-width: 1440px) {
-    width: 343px;
+    width: 352px;
   }
 `;
 
