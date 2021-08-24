@@ -40,24 +40,17 @@ export default App;
 
 //HOW I WOULD IMRPOVE THIS PROJECT
 
-// 1. make constant styles (for example header styles or
-// containers for sections wrapped by flexboxes)
-// OR
-// Make headers components (for H1, H2, etc) instead of constant styles
-
-// 2. program section at the top and program section at the bottom
+// 1. program section at the top and program section at the bottom
 // should update selected plan at the same time
 
-// 3. constant styles for colors, screen sizes
+// 2. constant styles for colors, screen sizes
 //(for example instead of @media(min-width:1440px) it could be @media(min-width:mobileScreen))
 
-// 4. use SVG instead of png for ultra mega quality resolutions
+// 3. use SVG instead of png
 
-// 5. make clients section as carousel for mobile screens
+// 4. make clients section as carousel for mobile screens
 
-// 6. maybe it was worth to make styles as seperate files. Not sure.
-
-// 7. write more comments
+// 5. write more comments
 
 //--------------------------------------------------------------------------------------------
 
